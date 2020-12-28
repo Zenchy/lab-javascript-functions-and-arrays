@@ -1,18 +1,32 @@
 // Iteration #1: Find the maximum
+maxOfTwoNumbers = (a, b) => (a>b || a==b) ? a : b
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
-
+findLongestWord = (arrword) => arrword.length ? arrword.sort((a,b) => {return b.length-a.length})[0]: null;
 // Iteration #3: Calculate the sum
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
+sumNumbers = (arrnum) => arrnum.length ? arrnum.reduce((accum, elem) => accum+elem ): arrnum.length
+sum = (arrnum) => (
+  arrnum.length ? arrnum.reduce((accum, elem) => {  
+    if (typeof accum == 'object' || typeof elem == 'object' || typeof accum == 'array' || typeof elem == 'array') throw new Error("Unsupported data type sir or ma'am")
+    if (typeof accum === 'string') accum = accum.length
+    if (typeof elem === 'string') elem = elem.length
+    return accum+elem
+  } ): arrnum.length)
+
+
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+averageNumbers = (aveArr) => aveArr.length === 0 ? null : sumNumbers(aveArr)/aveArr.length
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
+
+averageWordLength = (wordAve) =>  wordAve.length === 0 ? null : wordAve.length === 1 ? wordAve[0].length : sum(wordAve)/wordAve.length
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
