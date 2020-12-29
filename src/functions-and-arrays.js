@@ -28,6 +28,19 @@ const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smar
 
 averageWordLength = (wordAve) =>  wordAve.length === 0 ? null : wordAve.length === 1 ? wordAve[0].length : sum(wordAve)/wordAve.length
 
+
+avgArrelem = (avgArr) => {
+  return avgArr.map(avgElem => { 
+    avgElem = typeof avgElem !== 'boolean' ? avgElem : avgElem ? 1 : 0
+    avgElem = typeof avgElem === 'string' ? avgElem.length : avgElem 
+    return avgElem
+  })
+}
+
+avg = (avgArr) => avgArr.length === 0 ? null : Math.trunc(100*sum(avgArrelem(avgArr))/avgArr.length)/100
+
+
+
 // Iteration #5: Unique arrays
 const wordsUnique = [
   'crab',
@@ -42,6 +55,22 @@ const wordsUnique = [
   'simple',
   'bring'
 ];
+
+uniquifyArray = (uniArr)=> {
+  let filtro = []
+  let numerito = 3
+  uniArr.forEach(element => {
+    numerito = numerito+1
+    // console.log('inside', filtro)
+    // console.log('includes', filtro.inlcudes(element))
+    // cosa = filtro.inlcudes(element)
+    //   if (!cosa){
+    //   filtro.push(element)
+    //   }
+    })
+  console.log ('fin' ,numerito)
+  return uniArr.length === 0 ? null : filtro
+}
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
